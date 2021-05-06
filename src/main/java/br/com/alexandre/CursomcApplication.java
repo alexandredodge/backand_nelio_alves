@@ -40,8 +40,8 @@ public class CursomcApplication  implements CommandLineRunner{
 		p2.getCategorias().addAll(Arrays.asList(cat1,cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
-		DAO.saveAll(Arrays.asList(cat1,cat2));
-		prodDAO.saveAll(Arrays.asList(p1,p2,p3));
+//		DAO.saveAll(Arrays.asList(cat1,cat2));
+//		prodDAO.saveAll(Arrays.asList(p1,p2,p3));
 	}
 	
 	

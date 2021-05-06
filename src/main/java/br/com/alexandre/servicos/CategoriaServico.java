@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.alexandre.DAO.CategoriaDAO;
 import br.com.alexandre.domain.Categoria;
+import br.com.alexandre.servicos.exceptions.ObjectNotFoundException;
+
 
 @Service
 public class CategoriaServico {
@@ -15,12 +17,12 @@ public class CategoriaServico {
 	@Autowired
 	private CategoriaDAO categoriaDAO;
 	
-	public Categoria buscar(Integer id) {
+	public Categoria find(Integer id){
 		Optional<Categoria> retorno = categoriaDAO.findById(id);
-		return retorno.orElse(null);
+		return retorno.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
 
-	public List<Categoria> buscarTodos() {
+	public List<Categoria> finAll() {
 		List<Categoria> retTodos = categoriaDAO.findAll();
 		return retTodos;
 	}

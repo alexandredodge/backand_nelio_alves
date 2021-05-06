@@ -21,13 +21,17 @@ public class CategoriaController {
 	
 	@RequestMapping(value="/{id}" ,method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Categoria categoria = servico.buscar(id);
+		Categoria categoria = servico.find(id);
 		return ResponseEntity.ok(categoria);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Categoria> findAll(){
-		List<Categoria> categorias = servico.buscarTodos();
+		List<Categoria> categorias = servico.finAll();
 		return categorias;
-	} 
+	}
+	@RequestMapping(method = RequestMethod.POST)
+	public void salvar(@PathVariable Categoria cat) {
+		servico.salvar(cat);
+	}
 }
