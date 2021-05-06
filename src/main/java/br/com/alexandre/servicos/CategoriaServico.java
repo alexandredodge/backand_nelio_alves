@@ -24,4 +24,8 @@ public class CategoriaServico {
 		List<Categoria> retTodos = categoriaDAO.findAll();
 		return retTodos;
 	}
+	
+	public void salvar(Categoria categoria) {
+		categoriaDAO.save(categoria);
+	}
 }
