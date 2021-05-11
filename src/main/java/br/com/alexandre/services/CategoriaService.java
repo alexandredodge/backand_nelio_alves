@@ -15,19 +15,19 @@ import br.com.alexandre.servicos.exceptions.ObjectNotFoundException;
 public class CategoriaService {
 
 	@Autowired
-	private CategoriaRepository categoriaDAO;
+	private CategoriaRepository categoriaRepository;
 	
 	public Categoria find(Integer id){
-		Optional<Categoria> retorno = categoriaDAO.findById(id);
+		Optional<Categoria> retorno = categoriaRepository.findById(id);
 		return retorno.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
 
 	public List<Categoria> finAll() {
-		List<Categoria> retTodos = categoriaDAO.findAll();
+		List<Categoria> retTodos = categoriaRepository.findAll();
 		return retTodos;
 	}
 	
 	public void salvar(Categoria categoria) {
-		categoriaDAO.save(categoria);
+		categoriaRepository.save(categoria);
 	}
 }
