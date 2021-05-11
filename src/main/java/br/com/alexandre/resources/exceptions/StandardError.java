@@ -1,4 +1,4 @@
-package br.com.alexandre.controllers.exceptions;
+package br.com.alexandre.resources.exceptions;
 
 import java.io.Serializable;
 

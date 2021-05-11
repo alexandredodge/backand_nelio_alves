@@ -1,4 +1,4 @@
-package br.com.alexandre.controllers.exceptions;
+package br.com.alexandre.resources.exceptions;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import br.com.alexandre.servicos.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
-public class ControllerExceptionHandler {
+public class ResourceExceptionHandler {
 
 	@ExceptionHandler(ObjectNotFoundException.class)
 	public ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException e, HttpServletRequest request){

@@ -7,18 +7,18 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.alexandre.DAO.CategoriaDAO;
-import br.com.alexandre.DAO.ProdutoDAO;
 import br.com.alexandre.domain.Categoria;
 import br.com.alexandre.domain.Produto;
+import br.com.alexandre.repositories.CategoriaRepository;
+import br.com.alexandre.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursomcApplication  implements CommandLineRunner{
 
 	@Autowired
-	private CategoriaDAO DAO;
+	private CategoriaRepository DAO;
 	@Autowired
-	private ProdutoDAO prodDAO;
+	private ProdutoRepository prodDAO;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);

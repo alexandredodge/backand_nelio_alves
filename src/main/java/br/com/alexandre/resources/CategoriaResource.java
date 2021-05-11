@@ -1,4 +1,4 @@
-package br.com.alexandre.controllers;
+package br.com.alexandre.resources;
 
 import java.util.List;
 
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.alexandre.domain.Categoria;
-import br.com.alexandre.servicos.CategoriaServico;
+import br.com.alexandre.services.CategoriaService;
 
 @RestController
 @RequestMapping(value="/categorias")
-public class CategoriaController {
+public class CategoriaResource {
 
 	@Autowired
-	private CategoriaServico servico;
+	private CategoriaService servico;
 	
 	@RequestMapping(value="/{id}" ,method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
