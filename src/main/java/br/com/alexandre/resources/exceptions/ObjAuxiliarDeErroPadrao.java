@@ -2,14 +2,14 @@ package br.com.alexandre.resources.exceptions;
 
 import java.io.Serializable;
 
-public class StandardError implements Serializable{
+public class ObjAuxiliarDeErroPadrao implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	 private Integer status;
 	 private String msg;
 	 private Long timeStemp;
 	 
-	public StandardError(Integer status, String msg, Long timeStemp) {
+	public ObjAuxiliarDeErroPadrao(Integer status, String msg, Long timeStemp) {
 		super();
 		this.status = status;
 		this.msg = msg;
