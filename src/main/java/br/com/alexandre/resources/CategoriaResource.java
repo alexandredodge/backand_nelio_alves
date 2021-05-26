@@ -15,7 +15,7 @@ import br.com.alexandre.domain.Categoria;
 import br.com.alexandre.services.CategoriaService;
 
 @RestController
-@RequestMapping(value="/categoria")
+@RequestMapping(value="/categorias")
 public class CategoriaResource {
 
 	@Autowired
